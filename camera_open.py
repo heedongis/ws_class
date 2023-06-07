@@ -1,23 +1,12 @@
 import time
-
-
 import cv2
 from datetime import datetime
 from save_to_s3 import get_file
 import threading
 
-
-
-
-
 def get_image(filename, img):
     cv2.imwrite('./imgs/' + filename + '.png', img)
     threading.Timer(5, get_image).start()
-
-
-
-
-
 
 if __name__ == '__main__':
     webcam = cv2.VideoCapture(0)
